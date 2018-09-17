@@ -8,8 +8,8 @@ from types import SimpleNamespace
 from twisted.internet import defer
 from orchstr8.testcase import IntegrationTestCase, d2f
 
-import lbryschema
-lbryschema.BLOCKCHAIN_NAME = 'lbrycrd_regtest'
+import lbrynet.schema
+lbrynet.schema.BLOCKCHAIN_NAME = 'lbrycrd_regtest'
 
 from lbrynet import conf as lbry_conf
 from lbrynet.dht.node import Node

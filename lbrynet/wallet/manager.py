@@ -5,7 +5,7 @@ from twisted.internet import defer
 
 from torba.basemanager import BaseWalletManager
 
-from lbryschema.claim import ClaimDict
+from lbrynet.schema.claim import ClaimDict
 
 from .ledger import MainNetLedger
 from .account import generate_certificate

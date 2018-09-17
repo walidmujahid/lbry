@@ -6,7 +6,7 @@ import binascii
 from hashlib import sha256
 from types import SimpleNamespace
 from twisted.internet import defer, threads, reactor, error
-import lbryschema
+import lbrynet.schema
 from txupnp.upnp import UPnP
 from lbrynet import conf
 from lbrynet.core.utils import DeferredDict
@@ -338,7 +338,7 @@ class WalletComponent(Component):
     def start(self):
         log.info("Starting torba wallet")
         storage = self.component_manager.get_component(DATABASE_COMPONENT)
-        lbryschema.BLOCKCHAIN_NAME = conf.settings['blockchain_name']
+        lbrynet.schema.BLOCKCHAIN_NAME = conf.settings['blockchain_name']
         self.wallet_manager = LbryWalletManager.from_lbrynet_config(conf.settings, storage)
         self.wallet_manager.old_db = storage
         yield self.wallet_manager.start()

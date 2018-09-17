@@ -1,13 +1,13 @@
 import asyncio
 
 from orchstr8.testcase import IntegrationTestCase, d2f
-from lbryschema.claim import ClaimDict
+from lbrynet.schema.claim import ClaimDict
 from torba.constants import COIN
 from lbrynet.wallet.transaction import Transaction
 from lbrynet.wallet.account import generate_certificate
 
-import lbryschema
-lbryschema.BLOCKCHAIN_NAME = 'lbrycrd_regtest'
+import lbrynet.schema
+lbrynet.schema.BLOCKCHAIN_NAME = 'lbrycrd_regtest'
 
 
 example_claim_dict = {

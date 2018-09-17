@@ -6,7 +6,7 @@ from .account import Account  # pylint: disable=unused-import
 from torba.basetransaction import BaseTransaction, BaseInput, BaseOutput
 from torba.hash import hash160
 
-from lbryschema.claim import ClaimDict  # pylint: disable=unused-import
+from lbrynet.schema.claim import ClaimDict  # pylint: disable=unused-import
 from .script import InputScript, OutputScript
 
 

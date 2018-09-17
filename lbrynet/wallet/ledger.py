@@ -6,8 +6,8 @@ from binascii import unhexlify
 from twisted.internet import defer
 
 from .resolve import Resolver
-from lbryschema.error import URIParseError
-from lbryschema.uri import parse_lbry_uri
+from lbrynet.schema.error import URIParseError
+from lbrynet.schema.uri import parse_lbry_uri
 from torba.baseledger import BaseLedger
 
 from .account import Account
