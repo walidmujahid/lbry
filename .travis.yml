@@ -11,7 +11,6 @@ jobs:
       install:
         - pip install pylint
         - pip install git+https://github.com/lbryio/torba.git
-        - pip install git+https://github.com/lbryio/lbryschema.git
         - pip install -e .
       script: pylint lbrynet
 
@@ -21,7 +20,6 @@ jobs:
       install:
         - pip install coverage
         - pip install git+https://github.com/lbryio/torba.git
-        - pip install git+https://github.com/lbryio/lbryschema.git
         - pip install -e .[test]
       script: HOME=/tmp coverage run --source=lbrynet -m twisted.trial --reactor=asyncio tests.unit
       after_success:
@@ -45,7 +43,6 @@ jobs:
         - pip install tox-travis coverage
         - pushd .. && git clone https://github.com/lbryio/electrumx.git --branch lbryumx && popd
         - pushd .. && git clone https://github.com/lbryio/orchstr8.git && popd
-        - pushd .. && git clone https://github.com/lbryio/lbryschema.git && popd
         - pushd .. && git clone https://github.com/lbryio/lbryumx.git && cd lbryumx && git checkout afd34f323dd94c516108a65240f7d17aea8efe85 && cd .. && popd
         - pushd .. && git clone https://github.com/lbryio/torba.git && popd
       script: tox
@@ -76,7 +73,6 @@ jobs:
       install:
         - pip3 install pyinstaller
         - pip3 install git+https://github.com/lbryio/torba.git
-        - pip3 install git+https://github.com/lbryio/lbryschema.git
         - pip3 install -e .
       script:
         - pyinstaller -F -n lbrynet lbrynet/cli.py
